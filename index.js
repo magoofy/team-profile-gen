@@ -8,9 +8,9 @@ import { Intern }from './lib/intern.js'
 
 //import template for each job type
 import { managerTemplate } from './src/manager-template.js'
-// import { engineerTemplate } from './src/engineer-template.js'
-// import { internTemplate } from './src/intern-template.js'
-// import { mainHTML } from './src/main-html.js'
+import { engineerTemplate } from './src/engineer-template.js'
+import { internTemplate } from './src/intern-template.js'
+import { mainHTML } from './src/main-html.js'
 
 const team = [];
 
@@ -104,7 +104,7 @@ const addIntern = [
     {
         name: 'continue',
         type: 'list',
-        choices: ['Add engineer', 'Add intern', 'Finish'],
+        choices: ['Add Engineer', 'Add Intern', 'Finish'],
         message: "What would you like to do next?"
     }
 ];
@@ -116,9 +116,9 @@ function beginPrompt(questions) {
         .then((member) => {
             team.push(member);
 
-            if (member.continue === 'Add engineer') {
+            if (member.continue === 'Add Engineer') {
                 beginPrompt(addEngineer);
-            } else if (member.continue === 'Add intern') {
+            } else if (member.continue === 'Add Intern') {
                 beginPrompt(addIntern);
             } else {
                 createTeam(team)
@@ -172,7 +172,7 @@ function generateHtml(profiles) {
     })
 
     // after each profile template is written, insert into main html
-    const newHtml = mainHTML(profileCards);
+    const newHtml = mainHTML(profileTemplates);
 
     writeHtml(newHtml);
 };
