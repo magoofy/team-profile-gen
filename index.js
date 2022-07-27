@@ -7,7 +7,7 @@ import { Engineer }from './lib/engineer.js'
 import { Intern }from './lib/intern.js'
 
 //import template for each job type
-// import { managerTemplate } from './src/manager-template.js'
+import { managerTemplate } from './src/manager-template.js'
 // import { engineerTemplate } from './src/engineer-template.js'
 // import { internTemplate } from './src/intern-template.js'
 // import { mainHTML } from './src/main-html.js'
